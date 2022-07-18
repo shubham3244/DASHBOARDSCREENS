@@ -9,11 +9,11 @@
   height: 40vmin;
   pointer-events: none;
 }
-.temp {
+/* .temp {
   background: url("weatherimages/good-weather-background-sunny-day-24231670.jpg");
   height:50px;
   width:50px
-}
+} */
 .weatherBg{
   background: url("weatherimages/weatherpics.webp");
   height: 50vh;

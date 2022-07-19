@@ -6,6 +6,7 @@ const Temp = () => {
     const [selectData,setSelectData] = useState();
     const [countryCodes,setCountryCodes] = useState('');
     const [cityNames,setCityNames] = useState([]);
+    const [cityName,setCityName] = useState([]);
     const [data,setData] = useState('')
     const getWeatherData = async (cityName,countryCode) => {
 
@@ -91,14 +92,15 @@ const Temp = () => {
     })
     }
     const onSearch = () => {
-        getWeatherData(cityNames,countryCodes)
+        getWeatherData(cityName,countryCodes)
     }
     const chooseCity = (event) => {
+        
         console.log(event.target.value);
     cityNames.map(item=>{
 
         if(event.target.value==item.id){
-            setCityNames(item.cityName)
+            setCityName(item.cityName)
             console.log(item.cityName);
         }
         
@@ -118,7 +120,7 @@ const Temp = () => {
                                     <p class="ml-auto mr-4 mb-0 med-font text-end text-white">
 
                                         &nbsp;
-                                        <i class='far fa-snowflake'></i>
+                                        {data?.weather[0].description} <i class='far fa-snowflake'></i>
                                     </p>
                                     <h1 class="ml-auto mr-4 large-font text-end text-white">{data?.main?.temp}&#176;</h1>
                                 </div>
